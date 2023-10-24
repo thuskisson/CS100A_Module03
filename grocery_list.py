@@ -19,7 +19,10 @@ for i in store_list:
 print('Now go to the store. As you add items into the cart, input them below. ')
 
 #Prompt the user for items they put in the cart, then remove them from the store list
+
 while len(store_list) != 0:
-    store_list.remove(input("What did you put in your cart? "))
+    item = input("What did you put in your cart? ")
+
+    store_list.remove(item)
 else:
     print("You've completed your list. You may now check out. ")
