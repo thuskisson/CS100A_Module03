@@ -3,12 +3,13 @@ store_list = []
 
 #Ask the user for a list of items needed at the grocery store
 #Enter "none" when complete
-store_item = ''
-while store_item != 'none':
-    store_item = input('Enter a grocery item, or type "none" to exit: ')
-    if store_item != 'none':
-        #Add the new item to the grocery store list
-        store_list.append(store_item)
+
+store_item = input('What do you need from the store? ')
+while store_item != 'done':
+#Add the new item to the grocery store list
+    store_list.append(store_item)
+    store_item = input('What else do you need at the store? Type "done" to exit: ')
+
 
 #Display the grocery list
 print("Your grocery list is: ")
@@ -23,6 +24,7 @@ print('Now go to the store. As you add items into the cart, input them below. ')
 while len(store_list) != 0:
     item = input("What did you put in your cart? ")
 
-    store_list.remove(item)
-else:
-    print("You've completed your list. You may now check out. ")
+    if item in store_list:
+        store_list.remove(item)
+    else:
+        print("You strayed from the list. ")
